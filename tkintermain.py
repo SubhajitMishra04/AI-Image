@@ -113,7 +113,7 @@ class App:
         
         if(file):
             root.update()
-            shutil.copy(file,"/Users/subhajitmishra/Desktop/CGAN/Fast-AgingGAN-master/Fast-AgingGAN-master/image")
+            shutil.copy(file,"image/")
 
             infer.main()
             print("command3")
