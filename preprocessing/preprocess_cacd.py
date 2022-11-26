@@ -6,13 +6,13 @@ from scipy.io import loadmat
 
 parser = ArgumentParser()
 parser.add_argument('--image_dir',
-                    default='/Users/hasnainraza/Downloads/CACD2000/',
+                    default='Downloads/CACD2000/',
                     help='The CACD200 images dir')
 parser.add_argument('--metadata',
-                    default='/Users/hasnainraza/Downloads/celebrity2000_meta.mat',
+                    default='Downloads/celebrity2000_meta.mat',
                     help='The metadata for the CACD2000')
 parser.add_argument('--output_dir',
-                    default='/Users/hasnainraza/Downloads/CACDDomains',
+                    default='Downloads/CACDDomains',
                     help='The directory to write processed images')
 
 

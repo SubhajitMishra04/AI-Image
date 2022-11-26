@@ -4,10 +4,10 @@ from argparse import ArgumentParser
 
 parser = ArgumentParser()
 parser.add_argument('--data_dir',
-                    default='/Users/hasnainraza/Downloads/UTKFace/',
+                    default='Downloads/UTKFace/',
                     help='The UTKFace aligned images dir')
 parser.add_argument('--output_dir',
-                    default='/Users/hasnainraza/Downloads/FacesProcessed',
+                    default='Downloads/FacesProcessed',
                     help='The directory to write processed images')
 
 
