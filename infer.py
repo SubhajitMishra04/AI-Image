@@ -11,7 +11,7 @@ from gan_module import Generator
 
 parser = ArgumentParser()
 parser.add_argument(
-    '--image_dir', default='/Downloads/CACD_VS/', help='The image directory')
+    '--image_dir', default='image/', help='The image directory')
 
 
 @torch.no_grad()
@@ -38,8 +38,10 @@ def main():
         aged_face = (aged_face.squeeze().permute(1, 2, 0).numpy() + 1.0) / 2.0
         ax[0, i].imshow((img.squeeze().permute(1, 2, 0).numpy() + 1.0) / 2.0)
         ax[1, i].imshow(aged_face)
-    # plt.show()
+    plt.show()
     plt.savefig("mygraph.png")
+    # image1 = Image.open("/Users/subhajitmishra/Desktop/CGAN/Fast-AgingGAN-master/Fast-AgingGAN-master/mygraph.png")
+    # image.show()
 
 
 
