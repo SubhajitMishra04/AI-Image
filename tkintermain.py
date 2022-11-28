@@ -11,6 +11,10 @@ from tkinter.filedialog import askopenfile
 import os
 import shutil
 
+from tkHyperLinkManager import HyperlinkManager
+import webbrowser
+from functools import partial
+
 
 class App:
 
@@ -87,14 +91,14 @@ class App:
         GLabel_776["text"] = "© AI image 2022® - Image Aging using AI"
         GLabel_776.place(x=0,y=470,width=154,height=30)
 
-        GLabel_842=tk.Label(root)
-        ft = tkFont.Font(family='Times',size=10)
-        GLabel_842["font"] = ft
-        GLabel_842["bg"] = "#ffffff"
-        GLabel_842["fg"] = "#d34238"
-        GLabel_842["justify"] = "center"
-        GLabel_842["text"] = "About Us"
-        GLabel_842.place(x=510,y=10,width=70,height=25)
+        # GLabel_842=tk.Label(root)
+        # ft = tkFont.Font(family='Times',size=10)
+        # GLabel_842["font"] = ft
+        # GLabel_842["bg"] = "#ffffff"
+        # GLabel_842["fg"] = "#d34238"
+        # GLabel_842["justify"] = "center"
+        # GLabel_842["text"] = "About Us"
+        # GLabel_842.place(x=510,y=10,width=70,height=25)
 
         GLabel_190=tk.Label(root)
         ft = tkFont.Font(family='Times',size=19)
@@ -104,6 +108,16 @@ class App:
         GLabel_190["justify"] = "center"
         GLabel_190["text"] = "AI Image"
         GLabel_190.place(x=10,y=10,width=100,height=30)
+
+         # Create a Label to display the link
+        text1 = Text(root)
+        text1.place(x=510,y=10,width=70,height=25)
+        text1["bg"] = "#ffffff"
+        text1["fg"] = "#333333"
+        hyperlink= HyperlinkManager(text1)
+        text1.insert(END,"About Us",hyperlink.add(partial(webbrowser.open,"https://github.com/SubhajitMishra04/Ai-Image")))
+
+
 
 
     def GButton_84_command(self):
@@ -128,6 +142,9 @@ class App:
 
             # label1.place(x=1, y=1)  #Position image
     
+
+    def callback(url):
+        webbrowser.open_new_tab(url)
 
 
 if __name__ == "__main__":
